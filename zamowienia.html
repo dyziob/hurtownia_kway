@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hurtownia</title>
+
+    <link rel="stylesheet" href="styl4.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.png" alt="hurtownia">
+    </div>
+    <div class="nav">
+        <a href="index.html">Strona główna</a>
+        <a href="zamowienia.html">Zamówienia</a>
+        <a href="blog.html">Blok o kawie</a>
+        <a href="http://gatunki-kawy.pl/" target="_blank">Odwiedź także</a>
+    </div>
+    <div class="baner">
+        <h1>Hurtownia kawy</h1>
+    </div>
+    <div class="left">
+        <h2>Oferta</h2>
+        <ol>
+            <li>Kawa palona Arabica</li>
+            <li>Kawa palona Robusta</li>
+            <li>Kawa bezkofeinowa</li>
+            <li>Kawa zielona</li>
+        </ol>
+    </div>
+    <div class="right">
+        <form action="zamowienia.html" id="form1">
+            Podaj numer kawy: <br>
+            <input type="number" id="kawa"> <br>
+            Podaj wagę w dekagramach: <br>
+            <input type="number" id="waga">
+            <button onclick="licz(); return false;">Zamów</button>
+        </form> <br>
+        <p id="wynik"></p>
+        
+        <script>
+            function licz() {
+                var kawa = document.getElementById("kawa");
+                var waga = document.getElementById("waga");
+                var p = document.getElementById("wynik");
+                var wynik;
+
+                if(kawa.value==1)  {
+                    wynik=waga.value*5;
+                }
+                else if(kawa.value==2)  {
+                    wynik=waga.value*7;
+                }
+                else if(kawa.value==3)  {
+                    wynik=waga.value*6;
+                }
+                else {
+                    wynik = 0;
+                }
+                p.innerHTML = "Koszt zamówienia wynosi: "+wynik+" zł";
+            }
+        </script>
+    
+    </div>
+    <div class="footer">
+            <p>Stronę przygotował: <b>01292802473<b></p>
+    </div>
+</body>
+</html>
